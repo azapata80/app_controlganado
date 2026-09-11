@@ -1,0 +1,9 @@
+/config.php
+/.env
+/.env.*
+!/\.env.example
+!/.env.docker.example
+/node_modules/
+/test-results/
+/playwright-report/
+/.release-build/

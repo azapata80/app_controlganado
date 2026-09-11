@@ -1,0 +1,55 @@
+name: ganaderia-el-viejo
+
+services:
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-ganaderia_el_viejo}
+      MARIADB_USER: ${DB_USER:-ganaderia}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Copie .env.docker.example como .env y configure DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Configure DB_ROOT_PASSWORD en .env}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ganaderia_db:/var/lib/mysql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -p$$MARIADB_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      - backend
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      GANADERIA_ENV: production
+      GANADERIA_DB_HOST: db
+      GANADERIA_DB_PORT: 3306
+      GANADERIA_DB_NAME: ${DB_NAME:-ganaderia_el_viejo}
+      GANADERIA_DB_USER: ${DB_USER:-ganaderia}
+      GANADERIA_DB_PASS: ${DB_PASSWORD}
+      GANADERIA_BASE_URL: ${APP_BASE_URL:-http://localhost:8080}
+      GANADERIA_APP_NAME: ${APP_NAME:-Sistema de Gestión y Control de Ganado}
+      GANADERIA_API_KEY: ${INTEGRATION_API_KEY:-}
+    ports:
+      - "${APP_PORT:-8080}:80"
+    networks:
+      - backend
+
+volumes:
+  ganaderia_db:
+
+networks:
+  backend:
+    driver: bridge

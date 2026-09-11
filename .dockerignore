@@ -1,0 +1,12 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.docker.example
+config.php
+node_modules
+test-results
+playwright-report
+*.log
+*.sql.gz
+*.tar.gz
