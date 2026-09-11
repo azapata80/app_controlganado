@@ -14,6 +14,8 @@
 - Administración editable de ubicaciones y grupos ganaderos.
 - Identidad visual de Sistema de Gestión y Control de Ganado.
 - Datos demostrativos coherentes y cargador independiente para bodega.
+- Archivo `sql/demo_data.sql` para cargar el escenario completo desde
+  phpMyAdmin sin requerir acceso SSH.
 
 ### Seguridad y calidad
 

@@ -46,6 +46,17 @@ SiteGround genera los nombres de base y usuario. Deben copiarse completos, inclu
 
 `schema.sql` ya contiene todas las migraciones hasta la versión 1.1.0. En una instalación nueva no ejecute además los archivos de `sql/migrations/`.
 
+### Cargar el escenario demostrativo desde phpMyAdmin
+
+Después de importar `schema.sql`, puede importar `sql/demo_data.sql` sobre la
+misma base. El archivo crea un escenario coherente con animales, pesajes,
+eventos, costos, mano de obra, bodega, traslado, venta y cierre mensual.
+
+El archivo puede importarse más de una vez y conserva los usuarios, la bitácora
+de accesos y las reglas financieras/productivas. Sin embargo, elimina y
+reemplaza todos los datos operativos; úselo únicamente en una instalación nueva,
+de demostración o después de crear un respaldo.
+
 ## 5. Subir los archivos
 
 1. Abra **Site Tools → Site → File Manager**.

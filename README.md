@@ -200,6 +200,9 @@ coherente, conservando usuarios y reglas, ejecute dentro del contenedor web:
 php scripts/load_demo.php --confirm
 ```
 
+En SiteGround o cPanel también puede importar `sql/demo_data.sql` directamente
+desde phpMyAdmin, después de haber instalado `sql/schema.sql`.
+
 Este comando reinicia animales, pesajes, eventos, costos, personal, traslados,
 ventas y cierres. También restablece los catálogos operativos a Montezuma, La Flor
 y Otras; úselo solamente en ambientes de demostración.
