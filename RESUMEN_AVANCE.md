@@ -181,6 +181,7 @@ http://localhost:8080
 | Documento | Propósito |
 |---|---|
 | `README.md` | Descripción técnica y funcional general |
+| `ESPECIFICACIONES_Y_EVOLUCION_COMERCIAL.md` | Alcance vigente y propuesta de evolución comercial |
 | `QUICKSTART_DOCKER.md` | Instalación y operación con Docker |
 | `QUICKSTART_SITEGROUND.md` | Despliegue en SiteGround |
 | `manual.php` | Manual para usuarios finales |

@@ -17,6 +17,10 @@ Para ejecutar la aplicación con PHP/Apache y MariaDB en contenedores consulte
 Para conocer el estado funcional, técnico y los próximos pasos consulte
 [`RESUMEN_AVANCE.md`](RESUMEN_AVANCE.md).
 
+Para revisar las especificaciones vigentes, limitaciones y propuesta de
+evolución comercial consulte
+[`ESPECIFICACIONES_Y_EVOLUCION_COMERCIAL.md`](ESPECIFICACIONES_Y_EVOLUCION_COMERCIAL.md).
+
 ## Requisitos
 - PHP 8.0+
 - MySQL 5.7+ / MariaDB 10.3+

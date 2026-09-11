@@ -16,6 +16,8 @@
 - Datos demostrativos coherentes y cargador independiente para bodega.
 - Archivo `sql/demo_data.sql` para cargar el escenario completo desde
   phpMyAdmin sin requerir acceso SSH.
+- Documento de especificaciones funcionales, limitaciones, preparación
+  comercial y evolución recomendada del producto.
 
 ### Seguridad y calidad
 
